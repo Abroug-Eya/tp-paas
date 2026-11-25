@@ -5,8 +5,10 @@ from flask import Flask, jsonify
 app = Flask(__name__)
 
 # La configuration vient de l'environnement, pas du code
-MESSAGE = os.environ.get("MESSAGE", "Bonjour depuis mon premier PaaS !")
-
+MESSAGE = os.environ.get(
+    "MESSAGE",
+    "Bonjour depuis mon premier PaaS !"
+)
 @app.route("/")
 def home():
     return f"<h1>{MESSAGE}</h1><p>Version 2</p>"
